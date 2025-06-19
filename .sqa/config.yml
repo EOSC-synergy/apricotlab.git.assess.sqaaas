@@ -1,0 +1,72 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: main
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/grycap/apricotlab:
+      branch: main
+      repo: https://github.com/grycap/apricotlab.git
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+  JPL_KEEPGOING: enabled
+sqa_criteria:
+  QC.Acc:
+    repos:
+      github.com/grycap/apricotlab git:
+        commands:
+        - /usr/bin/env sh .sqa/script.geeky-orchid-tarsier.sh
+        container: qc.acc_hasty-ultramarine-fossa
+  QC.Doc:
+    repos:
+      github.com/grycap/apricotlab find_doc_files.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.sloppy-azure-woodlouse.sh
+        container: qc.doc_sunny-seashell-chicken
+      github.com/grycap/apricotlab git:
+        commands:
+        - /usr/bin/env sh .sqa/script.droopy-denim-squid.sh
+        container: qc.doc_gimpy-ochre-wolverine
+      github.com/grycap/apricotlab markdownlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.lumpy-olivine-malamute.sh
+        container: qc.doc_leaky-thistle-heron
+  QC.Lic:
+    repos:
+      github.com/grycap/apricotlab licensee:
+        commands:
+        - /usr/bin/env sh .sqa/script.chummy-lilac-newfoundland.sh
+        container: qc.lic_scanty-carmine-mole
+  QC.Sec:
+    repos:
+      github.com/grycap/apricotlab bandit:
+        commands:
+        - /usr/bin/env sh .sqa/script.gummy-yellow-caterpillar.sh
+        container: qc.sec_lanky-sangria-drever
+  QC.Sty:
+    repos:
+      github.com/grycap/apricotlab flake8:
+        commands:
+        - /usr/bin/env sh .sqa/script.breezy-cardinal-sponge.sh
+        container: qc.sty_skimpy-red-okapi
+      github.com/grycap/apricotlab hadolint:
+        commands:
+        - /usr/bin/env sh .sqa/script.frumpy-peach-chicken.sh
+        container: qc.sty_flabby-zucchini-barb
+      github.com/grycap/apricotlab jsonlint:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-wheat-seal.sh
+        container: qc.sty_sleepy-cream-chamois
+  QC.Uni:
+    repos:
+      github.com/grycap/apricotlab pytest:
+        commands:
+        - /usr/bin/env sh .sqa/script.smelly-heliotrope-seal.sh
+        container: qc.uni_pokey-salmon-echidna
+  QC.Ver:
+    repos:
+      github.com/grycap/apricotlab get_git_tags.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.grumpy-grey-wolfhound.sh
+        container: qc.ver_gimpy-silver-cougar
+timeout: 5400
