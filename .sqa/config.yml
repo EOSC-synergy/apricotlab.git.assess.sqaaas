@@ -2,7 +2,7 @@ config:
   credentials: []
   project_repos:
     github.com/EOSC-synergy/sqaaas-tooling:
-      branch: feature/Ophidia
+      branch: feature/pynblint_fix
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/grycap/apricotlab:
       branch: main
@@ -15,64 +15,68 @@ sqa_criteria:
     repos:
       github.com/grycap/apricotlab git:
         commands:
-        - /usr/bin/env sh .sqa/script.skanky-celadon-akbash.sh
-        container: qc.acc_cheeky-corn-eagle
+        - /usr/bin/env sh .sqa/script.eggplant_warm_groundhog.sh
+        container: qc.acc_rosewater_vibrant_okapi
   QC.Doc:
     repos:
       github.com/grycap/apricotlab find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.squirrely-platinum-rat.sh
-        container: qc.doc_cranky-plum-booby
+        - /usr/bin/env sh .sqa/script.ebony_clever_groundhog.sh
+        container: qc.doc_green_mischievous_toucan
       github.com/grycap/apricotlab git:
         commands:
-        - /usr/bin/env sh .sqa/script.skanky-saffron-tiger.sh
-        container: qc.doc_sickly-tan-wolverine
+        - /usr/bin/env sh .sqa/script.glaucous_warm_quoll.sh
+        container: qc.doc_vermilion_bold_falcon
       github.com/grycap/apricotlab markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.whiny-salmon-affenpinscher.sh
-        container: qc.doc_grumpy-taupe-havanese
+        - /usr/bin/env sh .sqa/script.magenta_fair_orca.sh
+        container: qc.doc_prussian_zealous_squid
   QC.Lic:
     repos:
       github.com/grycap/apricotlab licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.trippy-emerald-greyhound.sh
-        container: qc.lic_gamy-amber-otter
+        - /usr/bin/env sh .sqa/script.clove_innocent_squirrel.sh
+        container: qc.lic_reef_fierce_gorilla
   QC.Met:
     repos:
       github.com/grycap/apricotlab validate_codemeta:
         commands:
-        - /usr/bin/env sh .sqa/script.surly-eggplant-dormouse.sh
-        container: qc.met_muggy-flax-leopard
+        - /usr/bin/env sh .sqa/script.onyx_balanced_hare.sh
+        container: qc.met_walnut_realistic_grizzly
   QC.Sec:
     repos:
       github.com/grycap/apricotlab bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.gimpy-green-lemming.sh
-        container: qc.sec_skinny-mustard-squirrel
+        - /usr/bin/env sh .sqa/script.hunter_frugal_goose.sh
+        container: qc.sec_tundra_content_falcon
   QC.Sty:
     repos:
       github.com/grycap/apricotlab flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.pretty-olive-antelope.sh
-        container: qc.sty_surly-russet-mammoth
+        - /usr/bin/env sh .sqa/script.dahlia_pensive_cormorant.sh
+        container: qc.sty_peony_confident_tortoise
       github.com/grycap/apricotlab hadolint:
         commands:
-        - /usr/bin/env sh .sqa/script.cloudy-fuchsia-otter.sh
-        container: qc.sty_nerdy-rust-crocodile
+        - /usr/bin/env sh .sqa/script.iris_respectful_snail.sh
+        container: qc.sty_reef_scrappy_okapi
       github.com/grycap/apricotlab jsonlint:
         commands:
-        - /usr/bin/env sh .sqa/script.squirrely-flax-horse.sh
-        container: qc.sty_greasy-puce-ladybird
+        - /usr/bin/env sh .sqa/script.vermilion_dramatic_cormorant.sh
+        container: qc.sty_peach_sweet_mongoose
+      github.com/grycap/apricotlab pynblint.py:
+        commands:
+        - /usr/bin/env sh .sqa/script.banana_thankful_swan.sh
+        container: qc.sty_rust_compassionate_flamingo
   QC.Uni:
     repos:
       github.com/grycap/apricotlab pytest:
         commands:
-        - /usr/bin/env sh .sqa/script.snippy-alizarin-blue.sh
-        container: qc.uni_homey-puce-bullfrog
+        - /usr/bin/env sh .sqa/script.lagoon_artistic_moth.sh
+        container: qc.uni_cinnamon_open_alpaca
   QC.Ver:
     repos:
       github.com/grycap/apricotlab get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-indigo-slug.sh
-        container: qc.ver_gimpy-zucchini-spitz
+        - /usr/bin/env sh .sqa/script.cinnabar_apathetic_hornbill.sh
+        container: qc.ver_arctic_studious_okapi
 timeout: 5400
